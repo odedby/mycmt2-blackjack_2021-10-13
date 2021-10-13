@@ -1,4 +1,6 @@
-package com.jitterted.ebp.blackjack;
+package com.jitterted.ebp.blackjack.domain;
+
+import com.jitterted.ebp.blackjack.adapter.in.console.ConsoleGame;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +15,10 @@ public class Hand {
     }
 
     public Hand() {
+    }
+
+    public boolean isBlackJack() {
+        return this.value() == 21 && this.cards.size() == 2;
     }
 
     private int value() {
@@ -58,7 +64,7 @@ public class Hand {
         return hand.value() < value();
     }
 
-    String displayValue() {
+    public String displayValue() {
         return String.valueOf(value());
     }
 

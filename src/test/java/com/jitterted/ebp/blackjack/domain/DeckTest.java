@@ -1,5 +1,6 @@
-package com.jitterted.ebp.blackjack;
+package com.jitterted.ebp.blackjack.domain;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
@@ -49,8 +50,8 @@ class DeckTest {
             drawnCards.add(deck.draw());
         }
 
-        assertThat(drawnCards)
-                .hasSize(52);
+        Assertions.assertThat(drawnCards)
+                  .hasSize(52);
     }
 
 }

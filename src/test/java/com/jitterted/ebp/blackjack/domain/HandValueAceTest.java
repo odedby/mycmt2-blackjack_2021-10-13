@@ -1,5 +1,6 @@
-package com.jitterted.ebp.blackjack;
+package com.jitterted.ebp.blackjack.domain;
 
+import com.jitterted.ebp.blackjack.adapter.in.console.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
