@@ -2,7 +2,6 @@ package com.jitterted.ebp.blackjack;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.fusesource.jansi.Ansi.ansi;
 
@@ -35,19 +34,12 @@ public class Hand {
         return handValue;
     }
 
-    String displayFirstCard() {
-        return cards.get(0).display();
-    }
-
     boolean dealerMustDrawCard() {
         return value() <= 16;
     }
 
-    void display() {
-        System.out.println(cards.stream()
-                                .map(Card::display)
-                                .collect(Collectors.joining(
-                                        ansi().cursorUp(6).cursorRight(1).toString())));
+    public List<Card> cards() {
+        return List.copyOf(this.cards);
     }
 
     public void drawFrom(Deck deck) {
